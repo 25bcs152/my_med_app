@@ -39,3 +39,13 @@ Key Libraries: firebase_core, cloud_firestore, provider, shared_preferences.
 The system uses Google Firebase (Cloud Firestore) as the central NoSQL database.
 
 Collections: medicine_1_data, medicine_2_data, metadata.
+
+
+
+Team & Acknowledgements
+This project was created by a team of three students from IIIT Dharwad as part of the subject "Leveraging IT for Social Good and CSR".
+Team Members:
+Sampreeth Pagadala
+Rohit Desai
+Prasanth Palchuri
+The goal of this project is to provide accessible technology to improve medicine availability tracking for better healthcare outcomes.
