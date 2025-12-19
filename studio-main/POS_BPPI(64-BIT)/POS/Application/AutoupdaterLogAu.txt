@@ -1,0 +1,761 @@
+
+21/01/19 12:28:56(1.0.0.13) : Check Autoupdate Is Enabled
+21/01/19 12:28:56(1.0.0.13) : Start Check For Update
+21/01/19 12:28:56(1.0.0.13) : Start GetAutoUpdaterInfo()
+21/01/19 12:28:56(1.0.0.13) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Mon, 21 Jan 2019 07:00:59 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 31
+  Content-Type: application/json; charset=utf-8
+}:GetAutoUpdaterInfo()
+
+21/01/19 12:28:56(1.0.0.13) : Find Latest Version AU :GetAutoUpdaterInfo()
+21/01/19 12:28:57(1.0.0.13) : CurrentAuId=2
+21/01/19 12:28:57(1.0.0.13) : au_id=2
+21/01/19 12:28:57(1.0.0.13) : Latest AU Not Found. :GetAutoUpdaterInfo()
+21/01/19 12:28:57(1.0.0.13) : Start GetApplictionInfo : GetApplictionInfo()
+21/01/19 12:28:57(1.0.0.13) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Mon, 21 Jan 2019 07:00:59 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 4
+  Content-Type: application/json; charset=utf-8
+}: GetApplictionInfo()
+
+21/01/19 12:28:57(1.0.0.13) : Find Latest Version POS : GetApplictionInfo()
+21/01/19 12:28:57(1.0.0.13) : Version Not Found For the Store : GetApplictionInfo()
+23/01/19 10:23:25(1.0.0.13) : Check Autoupdate Is Enabled
+23/01/19 10:23:25(1.0.0.13) : Start Check For Update
+23/01/19 10:23:25(1.0.0.13) : Start GetAutoUpdaterInfo()
+23/01/19 10:23:26(1.0.0.13) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Wed, 23 Jan 2019 04:55:26 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 31
+  Content-Type: application/json; charset=utf-8
+}:GetAutoUpdaterInfo()
+
+23/01/19 10:23:26(1.0.0.13) : Find Latest Version AU :GetAutoUpdaterInfo()
+23/01/19 10:23:26(1.0.0.13) : CurrentAuId=2
+23/01/19 10:23:26(1.0.0.13) : au_id=2
+23/01/19 10:23:26(1.0.0.13) : Latest AU Not Found. :GetAutoUpdaterInfo()
+23/01/19 10:23:26(1.0.0.13) : Start GetApplictionInfo : GetApplictionInfo()
+23/01/19 10:23:29(1.0.0.13) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Wed, 23 Jan 2019 04:55:29 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 4
+  Content-Type: application/json; charset=utf-8
+}: GetApplictionInfo()
+
+23/01/19 10:23:29(1.0.0.13) : Find Latest Version POS : GetApplictionInfo()
+23/01/19 10:23:29(1.0.0.13) : Version Not Found For the Store : GetApplictionInfo()
+23/01/19 15:21:24(1.0.0.7) : Check Autoupdate Is Enabled
+23/01/19 15:21:24(1.0.0.7) : Start Check For Update
+23/01/19 15:21:24(1.0.0.7) : Start GetAutoUpdaterInfo()
+23/01/19 15:21:28(1.0.0.7) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Wed, 23 Jan 2019 09:53:29 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 31
+  Content-Type: application/json; charset=utf-8
+}:GetAutoUpdaterInfo()
+
+23/01/19 15:21:28(1.0.0.7) : Find Latest Version AU :GetAutoUpdaterInfo()
+23/01/19 15:21:28(1.0.0.7) : CurrentAuId=2
+23/01/19 15:21:28(1.0.0.7) : au_id=2
+23/01/19 15:21:28(1.0.0.7) : Latest AU Not Found. :GetAutoUpdaterInfo()
+23/01/19 15:21:28(1.0.0.7) : Start GetApplictionInfo : GetApplictionInfo()
+23/01/19 15:21:29(1.0.0.7) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Wed, 23 Jan 2019 09:53:29 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 4
+  Content-Type: application/json; charset=utf-8
+}: GetApplictionInfo()
+
+23/01/19 15:21:29(1.0.0.7) : Find Latest Version POS : GetApplictionInfo()
+23/01/19 15:21:29(1.0.0.7) : Version Not Found For the Store : GetApplictionInfo()
+23/01/19 15:25:38(1.0.0.7) : Check Autoupdate Is Enabled
+23/01/19 15:25:38(1.0.0.7) : Start Check For Update
+23/01/19 15:25:38(1.0.0.7) : Start GetAutoUpdaterInfo()
+23/01/19 15:25:41(1.0.0.7) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Wed, 23 Jan 2019 09:57:41 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 31
+  Content-Type: application/json; charset=utf-8
+}:GetAutoUpdaterInfo()
+
+23/01/19 15:25:41(1.0.0.7) : Find Latest Version AU :GetAutoUpdaterInfo()
+23/01/19 15:25:42(1.0.0.7) : CurrentAuId=2
+23/01/19 15:25:42(1.0.0.7) : au_id=2
+23/01/19 15:25:42(1.0.0.7) : Latest AU Not Found. :GetAutoUpdaterInfo()
+23/01/19 15:25:42(1.0.0.7) : Start GetApplictionInfo : GetApplictionInfo()
+23/01/19 15:25:42(1.0.0.7) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Wed, 23 Jan 2019 09:57:43 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 4
+  Content-Type: application/json; charset=utf-8
+}: GetApplictionInfo()
+
+23/01/19 15:25:42(1.0.0.7) : Find Latest Version POS : GetApplictionInfo()
+23/01/19 15:25:42(1.0.0.7) : Version Not Found For the Store : GetApplictionInfo()
+28/01/19 10:16:46(1.0.0.13) : Check Autoupdate Is Enabled
+28/01/19 10:16:46(1.0.0.13) : Start Check For Update
+28/01/19 10:16:46(1.0.0.13) : Start GetAutoUpdaterInfo()
+28/01/19 10:16:46(1.0.0.13) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Mon, 28 Jan 2019 04:46:44 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 31
+  Content-Type: application/json; charset=utf-8
+}:GetAutoUpdaterInfo()
+
+28/01/19 10:16:46(1.0.0.13) : Find Latest Version AU :GetAutoUpdaterInfo()
+28/01/19 10:16:47(1.0.0.13) : CurrentAuId=2
+28/01/19 10:16:47(1.0.0.13) : au_id=2
+28/01/19 10:16:47(1.0.0.13) : Latest AU Not Found. :GetAutoUpdaterInfo()
+28/01/19 10:16:47(1.0.0.13) : Start GetApplictionInfo : GetApplictionInfo()
+28/01/19 10:16:47(1.0.0.13) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Mon, 28 Jan 2019 04:46:44 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 4
+  Content-Type: application/json; charset=utf-8
+}: GetApplictionInfo()
+
+28/01/19 10:16:47(1.0.0.13) : Find Latest Version POS : GetApplictionInfo()
+28/01/19 10:16:47(1.0.0.13) : Version Not Found For the Store : GetApplictionInfo()
+30/01/19 17:07:46(1.0.0.13) : Check Autoupdate Is Enabled
+30/01/19 17:07:46(1.0.0.13) : Start Check For Update
+30/01/19 17:07:46(1.0.0.13) : Start GetAutoUpdaterInfo()
+30/01/19 17:07:46(1.0.0.13) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Wed, 30 Jan 2019 11:37:42 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 31
+  Content-Type: application/json; charset=utf-8
+}:GetAutoUpdaterInfo()
+
+30/01/19 17:07:46(1.0.0.13) : Find Latest Version AU :GetAutoUpdaterInfo()
+30/01/19 17:07:46(1.0.0.13) : WinIOError :: The process cannot access the file 'D:\Software\Final POS\17-12-2018\Application\AutoupdaterLogAu.txt' because it is being used by another process. ==>    at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding)
+   at System.IO.File.InternalAppendAllText(String path, String contents, Encoding encoding)
+   at Pos.Ui.WriteAutoUpdateLog.WriteLog(String message) in d:\Ethics Infotech\BPPI\Code\Pos\Pos.Ui\frmLoginNew.cs:line 214
+   at Pos.Ui.frmLoginNew.frmLoginNew_Load(Object sender, EventArgs e) in d:\Ethics Infotech\BPPI\Code\Pos\Pos.Ui\frmLoginNew.cs:line 79
+
+30/01/19 17:07:47(1.0.0.13) : CurrentAuId=2
+30/01/19 17:07:47(1.0.0.13) : au_id=2
+30/01/19 17:07:47(1.0.0.13) : Latest AU Not Found. :GetAutoUpdaterInfo()
+30/01/19 17:07:47(1.0.0.13) : Start GetApplictionInfo : GetApplictionInfo()
+30/01/19 17:07:47(1.0.0.13) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Wed, 30 Jan 2019 11:37:43 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 4
+  Content-Type: application/json; charset=utf-8
+}: GetApplictionInfo()
+
+30/01/19 17:07:47(1.0.0.13) : Find Latest Version POS : GetApplictionInfo()
+30/01/19 17:07:47(1.0.0.13) : Version Not Found For the Store : GetApplictionInfo()
+31/01/19 15:34:04(1.0.0.13) : Check Autoupdate Is Enabled
+31/01/19 15:34:04(1.0.0.13) : Start Check For Update
+31/01/19 15:34:05(1.0.0.13) : Start GetAutoUpdaterInfo()
+31/01/19 15:34:05(1.0.0.13) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Thu, 31 Jan 2019 10:03:58 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 31
+  Content-Type: application/json; charset=utf-8
+}:GetAutoUpdaterInfo()
+
+31/01/19 15:34:05(1.0.0.13) : Find Latest Version AU :GetAutoUpdaterInfo()
+31/01/19 15:34:05(1.0.0.13) : CurrentAuId=2
+31/01/19 15:34:05(1.0.0.13) : au_id=2
+31/01/19 15:34:05(1.0.0.13) : Latest AU Not Found. :GetAutoUpdaterInfo()
+31/01/19 15:34:05(1.0.0.13) : Start GetApplictionInfo : GetApplictionInfo()
+31/01/19 15:34:05(1.0.0.13) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Thu, 31 Jan 2019 10:03:59 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 4
+  Content-Type: application/json; charset=utf-8
+}: GetApplictionInfo()
+
+31/01/19 15:34:05(1.0.0.13) : Find Latest Version POS : GetApplictionInfo()
+31/01/19 15:34:05(1.0.0.13) : Version Not Found For the Store : GetApplictionInfo()
+31/01/19 15:41:38(1.0.0.12) : Check Autoupdate Is Enabled
+31/01/19 15:41:38(1.0.0.12) : Start Check For Update
+31/01/19 15:41:38(1.0.0.12) : Start GetAutoUpdaterInfo()
+31/01/19 15:41:39(1.0.0.12) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Thu, 31 Jan 2019 10:11:32 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 31
+  Content-Type: application/json; charset=utf-8
+}:GetAutoUpdaterInfo()
+
+31/01/19 15:41:39(1.0.0.12) : Find Latest Version AU :GetAutoUpdaterInfo()
+31/01/19 15:41:39(1.0.0.12) : CurrentAuId=2
+31/01/19 15:41:39(1.0.0.12) : au_id=2
+31/01/19 15:41:39(1.0.0.12) : Latest AU Not Found. :GetAutoUpdaterInfo()
+31/01/19 15:41:39(1.0.0.12) : Start GetApplictionInfo : GetApplictionInfo()
+31/01/19 15:41:39(1.0.0.12) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Thu, 31 Jan 2019 10:11:32 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 4
+  Content-Type: application/json; charset=utf-8
+}: GetApplictionInfo()
+
+31/01/19 15:41:39(1.0.0.12) : Find Latest Version POS : GetApplictionInfo()
+31/01/19 15:41:39(1.0.0.12) : Version Not Found For the Store : GetApplictionInfo()
+15-02-2019 12:20:43(1.0.0.12) : Check Autoupdate Is Enabled
+15-02-2019 12:20:43(1.0.0.12) : Start Check For Update
+15-02-2019 12:20:43(1.0.0.12) : Start GetAutoUpdaterInfo()
+15-02-2019 12:20:43(1.0.0.12) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Fri, 15 Feb 2019 06:51:23 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 31
+  Content-Type: application/json; charset=utf-8
+}:GetAutoUpdaterInfo()
+
+15-02-2019 12:20:43(1.0.0.12) : Find Latest Version AU :GetAutoUpdaterInfo()
+15-02-2019 12:20:43(1.0.0.12) : CurrentAuId=2
+15-02-2019 12:20:43(1.0.0.12) : au_id=2
+15-02-2019 12:20:43(1.0.0.12) : Latest AU Not Found. :GetAutoUpdaterInfo()
+15-02-2019 12:20:43(1.0.0.12) : Start GetApplictionInfo : GetApplictionInfo()
+15-02-2019 12:20:43(1.0.0.12) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Fri, 15 Feb 2019 06:51:23 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 4
+  Content-Type: application/json; charset=utf-8
+}: GetApplictionInfo()
+
+15-02-2019 12:20:43(1.0.0.12) : Find Latest Version POS : GetApplictionInfo()
+15-02-2019 12:20:43(1.0.0.12) : Version Not Found For the Store : GetApplictionInfo()
+16-02-2019 12:25:17(1.0.0.10) : Check Autoupdate Is Enabled
+16-02-2019 12:25:17(1.0.0.10) : Start Check For Update
+16-02-2019 12:25:18(1.0.0.10) : Start GetAutoUpdaterInfo()
+16-02-2019 12:25:18(1.0.0.10) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Sat, 16 Feb 2019 06:55:54 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 31
+  Content-Type: application/json; charset=utf-8
+}:GetAutoUpdaterInfo()
+
+16-02-2019 12:25:18(1.0.0.10) : Find Latest Version AU :GetAutoUpdaterInfo()
+16-02-2019 12:25:19(1.0.0.10) : CurrentAuId=2
+16-02-2019 12:25:19(1.0.0.10) : au_id=2
+16-02-2019 12:25:19(1.0.0.10) : Latest AU Not Found. :GetAutoUpdaterInfo()
+16-02-2019 12:25:19(1.0.0.10) : Start GetApplictionInfo : GetApplictionInfo()
+16-02-2019 12:25:19(1.0.0.10) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Sat, 16 Feb 2019 06:55:55 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 4
+  Content-Type: application/json; charset=utf-8
+}: GetApplictionInfo()
+
+16-02-2019 12:25:19(1.0.0.10) : Find Latest Version POS : GetApplictionInfo()
+16-02-2019 12:25:19(1.0.0.10) : Version Not Found For the Store : GetApplictionInfo()
+16-02-2019 12:27:39(1.0.0.12) : Check Autoupdate Is Enabled
+16-02-2019 12:27:39(1.0.0.12) : Start Check For Update
+16-02-2019 12:27:39(1.0.0.12) : Start GetAutoUpdaterInfo()
+16-02-2019 12:27:39(1.0.0.12) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Sat, 16 Feb 2019 06:58:15 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 31
+  Content-Type: application/json; charset=utf-8
+}:GetAutoUpdaterInfo()
+
+16-02-2019 12:27:39(1.0.0.12) : Find Latest Version AU :GetAutoUpdaterInfo()
+16-02-2019 12:27:40(1.0.0.12) : CurrentAuId=2
+16-02-2019 12:27:40(1.0.0.12) : au_id=2
+16-02-2019 12:27:40(1.0.0.12) : Latest AU Not Found. :GetAutoUpdaterInfo()
+16-02-2019 12:27:40(1.0.0.12) : Start GetApplictionInfo : GetApplictionInfo()
+16-02-2019 12:27:40(1.0.0.12) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Sat, 16 Feb 2019 06:58:15 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 4
+  Content-Type: application/json; charset=utf-8
+}: GetApplictionInfo()
+
+16-02-2019 12:27:40(1.0.0.12) : Find Latest Version POS : GetApplictionInfo()
+16-02-2019 12:27:40(1.0.0.12) : Version Not Found For the Store : GetApplictionInfo()
+16-02-2019 12:34:40(1.0.0.12) : Check Autoupdate Is Enabled
+16-02-2019 12:34:40(1.0.0.12) : Start Check For Update
+16-02-2019 12:34:40(1.0.0.12) : Start GetAutoUpdaterInfo()
+16-02-2019 12:34:40(1.0.0.12) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Sat, 16 Feb 2019 07:05:16 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 31
+  Content-Type: application/json; charset=utf-8
+}:GetAutoUpdaterInfo()
+
+16-02-2019 12:34:40(1.0.0.12) : Find Latest Version AU :GetAutoUpdaterInfo()
+16-02-2019 12:34:41(1.0.0.12) : CurrentAuId=2
+16-02-2019 12:34:41(1.0.0.12) : au_id=2
+16-02-2019 12:34:41(1.0.0.12) : Latest AU Not Found. :GetAutoUpdaterInfo()
+16-02-2019 12:34:41(1.0.0.12) : Start GetApplictionInfo : GetApplictionInfo()
+16-02-2019 12:34:41(1.0.0.12) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Sat, 16 Feb 2019 07:05:17 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 4
+  Content-Type: application/json; charset=utf-8
+}: GetApplictionInfo()
+
+16-02-2019 12:34:41(1.0.0.12) : Find Latest Version POS : GetApplictionInfo()
+16-02-2019 12:34:41(1.0.0.12) : Version Not Found For the Store : GetApplictionInfo()
+16-02-2019 13:00:36(1.0.0.12) : Check Autoupdate Is Enabled
+16-02-2019 13:00:36(1.0.0.12) : Start Check For Update
+16-02-2019 13:00:37(1.0.0.12) : Start GetAutoUpdaterInfo()
+16-02-2019 13:00:37(1.0.0.12) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Sat, 16 Feb 2019 07:31:13 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 31
+  Content-Type: application/json; charset=utf-8
+}:GetAutoUpdaterInfo()
+
+16-02-2019 13:00:37(1.0.0.12) : Find Latest Version AU :GetAutoUpdaterInfo()
+16-02-2019 13:00:37(1.0.0.12) : CurrentAuId=2
+16-02-2019 13:00:37(1.0.0.12) : au_id=2
+16-02-2019 13:00:37(1.0.0.12) : Latest AU Not Found. :GetAutoUpdaterInfo()
+16-02-2019 13:00:37(1.0.0.12) : Start GetApplictionInfo : GetApplictionInfo()
+16-02-2019 13:00:37(1.0.0.12) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Sat, 16 Feb 2019 07:31:13 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 4
+  Content-Type: application/json; charset=utf-8
+}: GetApplictionInfo()
+
+16-02-2019 13:00:37(1.0.0.12) : Find Latest Version POS : GetApplictionInfo()
+16-02-2019 13:00:37(1.0.0.12) : Version Not Found For the Store : GetApplictionInfo()
+26/02/19 17:07:46(1.0.0.13) : Check Autoupdate Is Enabled
+26/02/19 17:07:46(1.0.0.13) : Start Check For Update
+26/02/19 17:07:46(1.0.0.13) : Start GetAutoUpdaterInfo()
+26/02/19 17:07:47(1.0.0.13) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Tue, 26 Feb 2019 11:37:50 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 31
+  Content-Type: application/json; charset=utf-8
+}:GetAutoUpdaterInfo()
+
+26/02/19 17:07:47(1.0.0.13) : Find Latest Version AU :GetAutoUpdaterInfo()
+26/02/19 17:07:47(1.0.0.13) : CurrentAuId=2
+26/02/19 17:07:47(1.0.0.13) : au_id=2
+26/02/19 17:07:47(1.0.0.13) : Latest AU Not Found. :GetAutoUpdaterInfo()
+26/02/19 17:07:47(1.0.0.13) : Start GetApplictionInfo : GetApplictionInfo()
+26/02/19 17:07:47(1.0.0.13) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Tue, 26 Feb 2019 11:37:50 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 4
+  Content-Type: application/json; charset=utf-8
+}: GetApplictionInfo()
+
+26/02/19 17:07:47(1.0.0.13) : Find Latest Version POS : GetApplictionInfo()
+26/02/19 17:07:47(1.0.0.13) : Version Not Found For the Store : GetApplictionInfo()
+16/03/19 14:30:03(1.0.0.13) : Check Autoupdate Is Enabled
+16/03/19 14:30:03(1.0.0.13) : Start Check For Update
+16/03/19 14:30:03(1.0.0.13) : Start GetAutoUpdaterInfo()
+16/03/19 14:30:03(1.0.0.13) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Sat, 16 Mar 2019 09:00:09 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 31
+  Content-Type: application/json; charset=utf-8
+}:GetAutoUpdaterInfo()
+
+16/03/19 14:30:03(1.0.0.13) : Find Latest Version AU :GetAutoUpdaterInfo()
+16/03/19 14:30:04(1.0.0.13) : CurrentAuId=2
+16/03/19 14:30:04(1.0.0.13) : au_id=2
+16/03/19 14:30:04(1.0.0.13) : Latest AU Not Found. :GetAutoUpdaterInfo()
+16/03/19 14:30:04(1.0.0.13) : Start GetApplictionInfo : GetApplictionInfo()
+16/03/19 14:30:04(1.0.0.13) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Sat, 16 Mar 2019 09:00:09 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 4
+  Content-Type: application/json; charset=utf-8
+}: GetApplictionInfo()
+
+16/03/19 14:30:04(1.0.0.13) : Find Latest Version POS : GetApplictionInfo()
+16/03/19 14:30:04(1.0.0.13) : Version Not Found For the Store : GetApplictionInfo()
+16/03/19 14:42:41(1.0.0.13) : Check Autoupdate Is Enabled
+16/03/19 14:42:41(1.0.0.13) : Start Check For Update
+16/03/19 14:42:42(1.0.0.13) : Start GetAutoUpdaterInfo()
+16/03/19 14:42:43(1.0.0.13) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Sat, 16 Mar 2019 09:12:49 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 31
+  Content-Type: application/json; charset=utf-8
+}:GetAutoUpdaterInfo()
+
+16/03/19 14:42:43(1.0.0.13) : Find Latest Version AU :GetAutoUpdaterInfo()
+16/03/19 14:42:45(1.0.0.13) : CurrentAuId=2
+16/03/19 14:42:45(1.0.0.13) : au_id=2
+16/03/19 14:42:45(1.0.0.13) : Latest AU Not Found. :GetAutoUpdaterInfo()
+16/03/19 14:42:45(1.0.0.13) : Start GetApplictionInfo : GetApplictionInfo()
+16/03/19 14:42:45(1.0.0.13) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Sat, 16 Mar 2019 09:12:50 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 4
+  Content-Type: application/json; charset=utf-8
+}: GetApplictionInfo()
+
+16/03/19 14:42:45(1.0.0.13) : Find Latest Version POS : GetApplictionInfo()
+16/03/19 14:42:45(1.0.0.13) : Version Not Found For the Store : GetApplictionInfo()
+19/03/19 10:27:35(1.0.0.13) : Check Autoupdate Is Enabled
+19/03/19 10:27:35(1.0.0.13) : Start Check For Update
+19/03/19 10:27:35(1.0.0.13) : Start GetAutoUpdaterInfo()
+19/03/19 10:27:36(1.0.0.13) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Tue, 19 Mar 2019 04:57:42 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 31
+  Content-Type: application/json; charset=utf-8
+}:GetAutoUpdaterInfo()
+
+19/03/19 10:27:36(1.0.0.13) : Find Latest Version AU :GetAutoUpdaterInfo()
+19/03/19 10:27:36(1.0.0.13) : CurrentAuId=2
+19/03/19 10:27:36(1.0.0.13) : au_id=2
+19/03/19 10:27:36(1.0.0.13) : Latest AU Not Found. :GetAutoUpdaterInfo()
+19/03/19 10:27:36(1.0.0.13) : Start GetApplictionInfo : GetApplictionInfo()
+19/03/19 10:27:36(1.0.0.13) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Tue, 19 Mar 2019 04:57:43 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 4
+  Content-Type: application/json; charset=utf-8
+}: GetApplictionInfo()
+
+19/03/19 10:27:36(1.0.0.13) : Find Latest Version POS : GetApplictionInfo()
+19/03/19 10:27:36(1.0.0.13) : Version Not Found For the Store : GetApplictionInfo()
+26/03/19 11:28:04(1.0.0.13) : Check Autoupdate Is Enabled
+26/03/19 11:28:04(1.0.0.13) : Start Check For Update
+26/03/19 11:28:04(1.0.0.13) : Start GetAutoUpdaterInfo()
+26/03/19 11:28:05(1.0.0.13) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Tue, 26 Mar 2019 05:58:20 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 31
+  Content-Type: application/json; charset=utf-8
+}:GetAutoUpdaterInfo()
+
+26/03/19 11:28:05(1.0.0.13) : Find Latest Version AU :GetAutoUpdaterInfo()
+26/03/19 11:28:05(1.0.0.13) : CurrentAuId=2
+26/03/19 11:28:05(1.0.0.13) : au_id=2
+26/03/19 11:28:05(1.0.0.13) : Latest AU Not Found. :GetAutoUpdaterInfo()
+26/03/19 11:28:05(1.0.0.13) : Start GetApplictionInfo : GetApplictionInfo()
+26/03/19 11:28:05(1.0.0.13) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Tue, 26 Mar 2019 05:58:20 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 4
+  Content-Type: application/json; charset=utf-8
+}: GetApplictionInfo()
+
+26/03/19 11:28:05(1.0.0.13) : Find Latest Version POS : GetApplictionInfo()
+26/03/19 11:28:05(1.0.0.13) : Version Not Found For the Store : GetApplictionInfo()
+29/03/19 10:57:36(1.0.0.13) : Check Autoupdate Is Enabled
+29/03/19 10:57:36(1.0.0.13) : Start Check For Update
+29/03/19 10:57:36(1.0.0.13) : Start GetAutoUpdaterInfo()
+29/03/19 10:57:36(1.0.0.13) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Fri, 29 Mar 2019 05:27:51 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 31
+  Content-Type: application/json; charset=utf-8
+}:GetAutoUpdaterInfo()
+
+29/03/19 10:57:36(1.0.0.13) : Find Latest Version AU :GetAutoUpdaterInfo()
+29/03/19 10:57:37(1.0.0.13) : CurrentAuId=2
+29/03/19 10:57:37(1.0.0.13) : au_id=2
+29/03/19 10:57:37(1.0.0.13) : Latest AU Not Found. :GetAutoUpdaterInfo()
+29/03/19 10:57:37(1.0.0.13) : Start GetApplictionInfo : GetApplictionInfo()
+29/03/19 10:57:37(1.0.0.13) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Fri, 29 Mar 2019 05:27:52 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 4
+  Content-Type: application/json; charset=utf-8
+}: GetApplictionInfo()
+
+29/03/19 10:57:37(1.0.0.13) : Find Latest Version POS : GetApplictionInfo()
+29/03/19 10:57:37(1.0.0.13) : Version Not Found For the Store : GetApplictionInfo()
+29/03/19 11:11:53(1.0.0.13) : Check Autoupdate Is Enabled
+29/03/19 11:11:53(1.0.0.13) : Start Check For Update
+29/03/19 11:11:54(1.0.0.13) : Start GetAutoUpdaterInfo()
+29/03/19 11:11:54(1.0.0.13) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Fri, 29 Mar 2019 05:42:11 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 31
+  Content-Type: application/json; charset=utf-8
+}:GetAutoUpdaterInfo()
+
+29/03/19 11:11:54(1.0.0.13) : Find Latest Version AU :GetAutoUpdaterInfo()
+29/03/19 11:11:55(1.0.0.13) : CurrentAuId=2
+29/03/19 11:11:55(1.0.0.13) : au_id=2
+29/03/19 11:11:55(1.0.0.13) : Latest AU Not Found. :GetAutoUpdaterInfo()
+29/03/19 11:11:55(1.0.0.13) : Start GetApplictionInfo : GetApplictionInfo()
+29/03/19 11:11:55(1.0.0.13) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Fri, 29 Mar 2019 05:42:11 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 4
+  Content-Type: application/json; charset=utf-8
+}: GetApplictionInfo()
+
+29/03/19 11:11:55(1.0.0.13) : Find Latest Version POS : GetApplictionInfo()
+29/03/19 11:11:55(1.0.0.13) : Version Not Found For the Store : GetApplictionInfo()
+29/03/19 12:56:15(1.0.0.14) : Check Autoupdate Is Enabled
+29/03/19 12:56:15(1.0.0.14) : Start Check For Update
+29/03/19 12:56:15(1.0.0.14) : Start GetAutoUpdaterInfo()
+29/03/19 12:56:15(1.0.0.14) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Fri, 29 Mar 2019 07:26:32 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 31
+  Content-Type: application/json; charset=utf-8
+}:GetAutoUpdaterInfo()
+
+29/03/19 12:56:15(1.0.0.14) : Find Latest Version AU :GetAutoUpdaterInfo()
+29/03/19 12:56:16(1.0.0.14) : CurrentAuId=2
+29/03/19 12:56:16(1.0.0.14) : au_id=2
+29/03/19 12:56:16(1.0.0.14) : Latest AU Not Found. :GetAutoUpdaterInfo()
+29/03/19 12:56:16(1.0.0.14) : Start GetApplictionInfo : GetApplictionInfo()
+29/03/19 12:56:16(1.0.0.14) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Fri, 29 Mar 2019 07:26:32 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 4
+  Content-Type: application/json; charset=utf-8
+}: GetApplictionInfo()
+
+29/03/19 12:56:16(1.0.0.14) : Find Latest Version POS : GetApplictionInfo()
+29/03/19 12:56:16(1.0.0.14) : Version Not Found For the Store : GetApplictionInfo()
+30/03/19 11:32:58(1.0.0.14) : Check Autoupdate Is Enabled
+30/03/19 11:32:58(1.0.0.14) : Start Check For Update
+30/03/19 11:32:58(1.0.0.14) : Start GetAutoUpdaterInfo()
+30/03/19 11:32:58(1.0.0.14) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Sat, 30 Mar 2019 06:02:53 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 31
+  Content-Type: application/json; charset=utf-8
+}:GetAutoUpdaterInfo()
+
+30/03/19 11:32:58(1.0.0.14) : Find Latest Version AU :GetAutoUpdaterInfo()
+30/03/19 11:32:58(1.0.0.14) : CurrentAuId=2
+30/03/19 11:32:58(1.0.0.14) : au_id=2
+30/03/19 11:32:58(1.0.0.14) : Latest AU Not Found. :GetAutoUpdaterInfo()
+30/03/19 11:32:58(1.0.0.14) : Start GetApplictionInfo : GetApplictionInfo()
+30/03/19 11:32:58(1.0.0.14) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Sat, 30 Mar 2019 06:02:53 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 4
+  Content-Type: application/json; charset=utf-8
+}: GetApplictionInfo()
+
+30/03/19 11:32:58(1.0.0.14) : Find Latest Version POS : GetApplictionInfo()
+30/03/19 11:32:58(1.0.0.14) : Version Not Found For the Store : GetApplictionInfo()
+01/04/19 12:23:05(1.0.0.15) : Check Autoupdate Is Enabled
+01/04/19 12:23:05(1.0.0.15) : Start Check For Update
+01/04/19 12:23:05(1.0.0.15) : Start GetAutoUpdaterInfo()
+01/04/19 12:23:05(1.0.0.15) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Mon, 01 Apr 2019 06:53:07 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 31
+  Content-Type: application/json; charset=utf-8
+}:GetAutoUpdaterInfo()
+
+01/04/19 12:23:05(1.0.0.15) : Find Latest Version AU :GetAutoUpdaterInfo()
+01/04/19 12:23:06(1.0.0.15) : CurrentAuId=2
+01/04/19 12:23:06(1.0.0.15) : au_id=2
+01/04/19 12:23:06(1.0.0.15) : Latest AU Not Found. :GetAutoUpdaterInfo()
+01/04/19 12:23:06(1.0.0.15) : Start GetApplictionInfo : GetApplictionInfo()
+01/04/19 12:23:06(1.0.0.15) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Mon, 01 Apr 2019 06:53:07 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 206
+  Content-Type: application/json; charset=utf-8
+}: GetApplictionInfo()
+
+01/04/19 12:23:06(1.0.0.15) : Find Latest Version POS : GetApplictionInfo()
+01/04/19 12:23:06(1.0.0.15) : Latest AU Not Found. : GetApplictionInfo()
+02/04/19 09:58:37(1.0.0.16) : Check Autoupdate Is Enabled
+02/04/19 09:58:37(1.0.0.16) : Start Check For Update
+02/04/19 09:58:37(1.0.0.16) : Start GetAutoUpdaterInfo()
+02/04/19 09:58:37(1.0.0.16) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Tue, 02 Apr 2019 04:28:38 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 31
+  Content-Type: application/json; charset=utf-8
+}:GetAutoUpdaterInfo()
+
+02/04/19 09:58:37(1.0.0.16) : Find Latest Version AU :GetAutoUpdaterInfo()
+02/04/19 09:58:37(1.0.0.16) : CurrentAuId=2
+02/04/19 09:58:37(1.0.0.16) : au_id=2
+02/04/19 09:58:37(1.0.0.16) : Latest AU Not Found. :GetAutoUpdaterInfo()
+02/04/19 09:58:37(1.0.0.16) : Start GetApplictionInfo : GetApplictionInfo()
+02/04/19 09:58:37(1.0.0.16) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Tue, 02 Apr 2019 04:28:38 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 206
+  Content-Type: application/json; charset=utf-8
+}: GetApplictionInfo()
+
+02/04/19 09:58:37(1.0.0.16) : Find Latest Version POS : GetApplictionInfo()
+02/04/19 09:58:38(1.0.0.16) : Latest AU Not Found. : GetApplictionInfo()
+02/04/19 10:05:36(1.0.0.16) : Check Autoupdate Is Enabled
+02/04/19 10:05:36(1.0.0.16) : Start Check For Update
+02/04/19 10:05:36(1.0.0.16) : Start GetAutoUpdaterInfo()
+02/04/19 10:05:36(1.0.0.16) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Tue, 02 Apr 2019 04:35:37 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 31
+  Content-Type: application/json; charset=utf-8
+}:GetAutoUpdaterInfo()
+
+02/04/19 10:05:36(1.0.0.16) : Find Latest Version AU :GetAutoUpdaterInfo()
+02/04/19 10:05:36(1.0.0.16) : CurrentAuId=2
+02/04/19 10:05:36(1.0.0.16) : au_id=2
+02/04/19 10:05:36(1.0.0.16) : Latest AU Not Found. :GetAutoUpdaterInfo()
+02/04/19 10:05:36(1.0.0.16) : Start GetApplictionInfo : GetApplictionInfo()
+02/04/19 10:05:36(1.0.0.16) : After Respone http://103.74.244.104:4479/
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+{
+  Date: Tue, 02 Apr 2019 04:35:37 GMT
+  Server: Microsoft-IIS/8.5
+  X-Powered-By: ASP.NET
+  Content-Length: 206
+  Content-Type: application/json; charset=utf-8
+}: GetApplictionInfo()
+
+02/04/19 10:05:36(1.0.0.16) : Find Latest Version POS : GetApplictionInfo()
+02/04/19 10:05:36(1.0.0.16) : Latest AU Not Found. : GetApplictionInfo()

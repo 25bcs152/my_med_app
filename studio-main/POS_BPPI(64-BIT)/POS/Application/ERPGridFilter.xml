@@ -1,0 +1,1143 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ERPGridFilter</name>
+    </assembly>
+    <members>
+        <member name="T:ERPGridFilter.ColumnFilterEventHandler">
+            <summary>
+            Represents the method that will handle an event related to a column filter.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:ERPGridFilter.ColumnFilterEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="T:ERPGridFilter.ColumnFilterEventArgs">
+            <summary>
+            Provides data for a column filter event. 
+            </summary>
+        </member>
+        <member name="M:ERPGridFilter.ColumnFilterEventArgs.#ctor(System.Windows.Forms.DataGridViewColumn,ERPGridFilter.ERPBaseColumnFilter)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ERPGridFilter.ColumnFilterEventArgs"/> class.
+            </summary>
+            <param name="Column">The DstaGridView column.</param>
+            <param name="ColumnFilter">The column filter instance.</param>
+        </member>
+        <member name="P:ERPGridFilter.ColumnFilterEventArgs.Column">
+            <summary>
+            Gets the DataGridView column involved in the event.
+            </summary>
+        </member>
+        <member name="P:ERPGridFilter.ColumnFilterEventArgs.ColumnFilter">
+            <summary>
+            Gets or sets the column filter instance.
+            </summary>
+            <value>A column filter instance.</value>
+        </member>
+        <member name="P:ERPGridFilter.ColumnFilterEventArgs.Handled">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:ERPGridFilter.ColumnFilterEventArgs"/> is handled.
+            </summary>
+            <value><c>true</c> if handled; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:ERPGridFilter.ERPDateRangeColumnFilter">
+            <summary>
+            An extended <i>column filter</i> implementation allowing filters on date ranges.
+            </summary>
+        </member>
+        <member name="T:ERPGridFilter.ERPBaseColumnFilter">
+            <summary>
+            The base class from which to derive effective <i>column filter</i> classes
+            </summary>
+            <remarks>
+            The purpose of a <i>column filter</i> control is to contain visual elements allowing the end user to construct a filter.
+            When inheriting from it, you can work just like creating any other user control. 
+            This class is a derivation of <b>UserControl</b> and provide functionalities to 
+            cooperate with ERPFilterManager. 
+            <para>
+            NOTE: 
+            This class must be intended as an abstract class. However, declaring it as abstract,
+            would generate errors whitin the designer when designing derived classes.
+            </para>
+            <para>
+            You should override <see cref="M:ERPGridFilter.ERPBaseColumnFilter.OnFilterExpressionBuilding(System.Object,System.ComponentModel.CancelEventArgs)"/> to provide a filter expression construction 
+            logic and to set the values of the <see cref="P:ERPGridFilter.ERPBaseColumnFilter.FilterExpression"/> and <see cref="P:ERPGridFilter.ERPBaseColumnFilter.FilterCaption"/> properties. 
+            </para>
+            </remarks>      
+        </member>
+        <member name="M:ERPGridFilter.ERPBaseColumnFilter.Init(ERPGridFilter.ERPFilterManager,ERPGridFilter.ERPBaseFilterHost,System.Windows.Forms.DataGridViewColumn,System.Data.DataView)">
+            <summary>
+            Called by the <i>filter manager</i>, inits the <i>column filter</i> and raises the FilterInitializing event.
+            </summary>
+            <param name="FilterManager">The <i>filter manager</i>.</param>
+            <param name="FilterHost">The filter host.</param>
+            <param name="gridColumn">The DataGridView column.</param>
+            <param name="boundDataView">The bound data view.</param>
+        </member>
+        <member name="M:ERPGridFilter.ERPBaseColumnFilter.OnFilterInitializing(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Raises the <see cref="E:ERPGridFilter.ERPBaseColumnFilter.FilterInitializing"/> event
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.ComponentModel.CancelEventArgs"/> instance containing the event data.</param>
+            <remarks>
+            When this <i>column filter</i> control is added to the <i>column filters</i> array of the <i>filter manager</i>, 
+            the latter calls the <see cref="M:ERPGridFilter.ERPBaseColumnFilter.Init(ERPGridFilter.ERPFilterManager,ERPGridFilter.ERPBaseFilterHost,System.Windows.Forms.DataGridViewColumn,System.Data.DataView)"/> method which, in turn, calls this method. 
+            You can ovverride this method to provide initialization code. 
+            </remarks>
+        </member>
+        <member name="M:ERPGridFilter.ERPBaseColumnFilter.FilterExpressionBuild">
+            <summary>
+            Forces the rebuilt of filter expression
+            </summary>
+            <remarks>
+            This method is called by <see cref="T:ERPGridFilter.ERPFilterManager"/> when popup is closed, to 
+            force recreation of the filter expression. 
+            </remarks>
+        </member>
+        <member name="M:ERPGridFilter.ERPBaseColumnFilter.OnFilterExpressionBuilding(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Raises the <see cref="E:ERPGridFilter.ERPBaseColumnFilter.FilterExpressionBuilding"/> event
+            </summary>
+            <param name="sender">The event source.</param>
+            <param name="e">The <see cref="T:System.ComponentModel.CancelEventArgs"/> instance containing the event data.</param>
+            <remarks>
+            Override <b>OnFilterExpressionBuilding</b> to provide a filter expression construction 
+            logic and to set the values of the <see cref="P:ERPGridFilter.ERPBaseColumnFilter.FilterExpression"/> and <see cref="P:ERPGridFilter.ERPBaseColumnFilter.FilterCaption"/> properties.
+            The <see cref="T:ERPGridFilter.ERPFilterManager"/> will use these properties in constructing the whole filter expression and to change the header text of the filtered column.
+            </remarks>
+        </member>
+        <member name="M:ERPGridFilter.ERPBaseColumnFilter.StringEscape(System.String)">
+            <summary>
+            Escapes a string to be suitable for filter expression.
+            </summary>
+            <param name="s">The string to escape.</param>
+            <returns>The escaped string</returns>
+        </member>
+        <member name="M:ERPGridFilter.ERPBaseColumnFilter.FormatValue(System.Object,System.Type)">
+            <summary>
+            Returns the string representation of the passed value, based on target type.
+            </summary>
+            <param name="value">The value to be formatted.</param>
+            <param name="targetType">The target type.</param>
+            <returns>The string representation of the passed value</returns>
+        </member>
+        <member name="M:ERPGridFilter.ERPBaseColumnFilter.GetNullCondition(System.String)">
+            <summary>
+            Returns a null condition string to be used in filter expression.
+            </summary>
+            <param name="DataColumnName">Name of the data column.</param>
+            <returns>A string to be used in the filter expression representing a null condition</returns>
+        </member>
+        <member name="M:ERPGridFilter.ERPBaseColumnFilter.GetNotNullCondition(System.String)">
+            <summary>
+            Returns a not null condition string to be used in filter expression.
+            </summary>
+            <param name="DataColumnName">Name of the data column.</param>
+            <returns>A string to be used in the filter expression representing a not null condition</returns>
+        </member>
+        <member name="E:ERPGridFilter.ERPBaseColumnFilter.FilterExpressionBuilding">
+            <summary>
+            Occurs before the filter expression is about to be built.
+            </summary>
+        </member>
+        <member name="E:ERPGridFilter.ERPBaseColumnFilter.FilterInitializing">
+            <summary>
+            Occurs when the filter column is about to be initialized.
+            </summary>
+        </member>
+        <member name="P:ERPGridFilter.ERPBaseColumnFilter.FilterApplySoon">
+            <summary>
+            Gets or sets a value indicating whether filter apply soon after a user performs some changes.
+            </summary>
+            <value><c>true</c> (default) if to apply soon; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:ERPGridFilter.ERPBaseColumnFilter.FilterExpression">
+            <summary>
+            Gets and sets the filter expression.
+            </summary>
+            <remarks>
+            It's the filter expression on the column. Its value is used by the <see cref="T:ERPGridFilter.ERPFilterManager"/> to build the whole filter expression.
+            In inherited class, set its value in the override of <see cref="M:ERPGridFilter.ERPBaseColumnFilter.OnFilterExpressionBuilding(System.Object,System.ComponentModel.CancelEventArgs)"/>.
+            The filter expression must follow the rules of the DataView <see cref="P:System.Data.DataView.RowFilter"/> property.
+            </remarks>
+        </member>
+        <member name="P:ERPGridFilter.ERPBaseColumnFilter.FilterCaption">
+            <summary>
+            Gets and sets the caption to show in the column header when the filter is active.
+            </summary>
+            <remarks>
+            Represents the caption to show in the column header when the filter is active.
+            In inherited class, set its value in the override of <see cref="M:ERPGridFilter.ERPBaseColumnFilter.OnFilterExpressionBuilding(System.Object,System.ComponentModel.CancelEventArgs)"/>.
+            </remarks>
+        </member>
+        <member name="P:ERPGridFilter.ERPBaseColumnFilter.Active">
+            <summary>
+            Gets or sets a value indicating whether the filter is active.
+            </summary>
+            <value><c>true</c> if active; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:ERPGridFilter.ERPBaseColumnFilter.HFilterAlignment">
+            <summary>
+            Specifies how the <i>column filter</i> control is horizontally aligned inside the <i>filter host</i>.
+            </summary>
+        </member>
+        <member name="P:ERPGridFilter.ERPBaseColumnFilter.VFilterAlignment">
+            <summary>
+            Specifies how the <i>column filter</i> control is vertically aligned inside the <i>filter host</i>.
+            </summary>
+        </member>
+        <member name="P:ERPGridFilter.ERPBaseColumnFilter.BoundDataView">
+            <summary>
+            Gets the <b>DataView</b> acting as the data source of the <b>DataGridView</b> to which this <i>column filter</i> is applied.
+            </summary>
+        </member>
+        <member name="P:ERPGridFilter.ERPBaseColumnFilter.FilterHost">
+            <summary>
+            Gets the <i>filter host</i> control in which this <i>column filter</i> is shown.
+            </summary>
+        </member>
+        <member name="P:ERPGridFilter.ERPBaseColumnFilter.FilterManager">
+            <summary>
+            Gets the <i>filter manager</i>.
+            </summary>
+        </member>
+        <member name="P:ERPGridFilter.ERPBaseColumnFilter.DataGridViewColumn">
+            <summary>
+            Gets the <b>DataGridView</b> column to which this <i>column filter</i> is applied.
+            </summary>
+            <value>The data grid view column.</value>
+        </member>
+        <member name="P:ERPGridFilter.ERPBaseColumnFilter.ColumnDataType">
+            <summary>
+            Gets the type of the data bound to the <b>DataGridView</b> column.
+            </summary>
+        </member>
+        <member name="P:ERPGridFilter.ERPBaseColumnFilter.OriginalDataGridViewColumnHeaderText">
+            <summary>
+            Gets the original <b>DataGridView</b> column header text.
+            </summary>
+        </member>
+        <member name="M:ERPGridFilter.ERPDateRangeColumnFilter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ERPGridFilter.ERPDateRangeColumnFilter"/> class.
+            </summary>
+        </member>
+        <member name="M:ERPGridFilter.ERPDateRangeColumnFilter.OnFilterInitializing(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Perform filter initialitazion and raises the FilterInitializing event.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.ComponentModel.CancelEventArgs"/> instance containing the event data.</param>
+            <remarks>
+            When this <i>column filter</i> control is added to the <i>column filters</i> array of the <i>filter manager</i>,
+            the latter calls the <see cref="M:ERPGridFilter.ERPBaseColumnFilter.Init(ERPGridFilter.ERPFilterManager,ERPGridFilter.ERPBaseFilterHost,System.Windows.Forms.DataGridViewColumn,System.Data.DataView)"/> method which, in turn, calls this method.
+            You can ovverride this method to provide initialization code or you can create an event handler and 
+            set the <i>Cancel</i> property of event argument to true, to skip standard initialization.
+            </remarks>
+        </member>
+        <member name="M:ERPGridFilter.ERPDateRangeColumnFilter.OnFilterExpressionBuilding(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Builds the filter expression and raises the FilterExpressionBuilding event
+            </summary>
+            <param name="sender">The event source.</param>
+            <param name="e">The <see cref="T:System.ComponentModel.CancelEventArgs"/> instance containing the event data.</param>
+            <remarks>
+            Override <b>OnFilterExpressionBuilding</b> to provide a filter expression construction
+            logic and to set the values of the <see cref="P:ERPGridFilter.ERPBaseColumnFilter.FilterExpression"/> and <see cref="P:ERPGridFilter.ERPBaseColumnFilter.FilterCaption"/> properties.
+            The <see cref="T:ERPGridFilter.ERPFilterManager"/> will use these properties in constructing the whole filter expression and to change the header text of the filtered column.
+            Otherwise, you can create an event handler and set the <i>Cancel</i> property of event argument to true, to skip standard filter expression building logic.
+            </remarks>
+        </member>
+        <member name="F:ERPGridFilter.ERPDateRangeColumnFilter.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ERPGridFilter.ERPDateRangeColumnFilter.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ERPGridFilter.ERPDateRangeColumnFilter.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:ERPGridFilter.ERPDateRangeColumnFilter.ComboBoxOperator">
+            <summary>
+            Gets the ComboBox control containing the available operators.
+            </summary>
+        </member>
+        <member name="P:ERPGridFilter.ERPDateRangeColumnFilter.DateTimePickerValue">
+            <summary>
+            Gets the DateTimePicker control containing the date value.
+            </summary>
+        </member>
+        <member name="P:ERPGridFilter.ERPDateRangeColumnFilter.DateTimePickerValue2">
+            <summary>
+            Gets the DateTimePicker control containing the second date value.
+            </summary>
+        </member>
+        <member name="T:ERPGridFilter.ERPMonthYearColumnFilter">
+            <summary>
+            An extended <i>column filter</i> implementation allowing filters on date, using months and years.
+            </summary>
+        </member>
+        <member name="M:ERPGridFilter.ERPMonthYearColumnFilter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ERPGridFilter.ERPMonthYearColumnFilter"/> class.
+            </summary>
+        </member>
+        <member name="M:ERPGridFilter.ERPMonthYearColumnFilter.OnFilterInitializing(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Perform filter initialitazion and raises the FilterInitializing event.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.ComponentModel.CancelEventArgs"/> instance containing the event data.</param>
+            <remarks>
+            When this <i>column filter</i> control is added to the <i>column filters</i> array of the <i>filter manager</i>,
+            the latter calls the <see cref="M:ERPGridFilter.ERPBaseColumnFilter.Init(ERPGridFilter.ERPFilterManager,ERPGridFilter.ERPBaseFilterHost,System.Windows.Forms.DataGridViewColumn,System.Data.DataView)"/> method which, in turn, calls this method.
+            You can ovverride this method to provide initialization code or you can create an event handler and 
+            set the <i>Cancel</i> property of event argument to true, to skip standard initialization.
+            </remarks>
+        </member>
+        <member name="M:ERPGridFilter.ERPMonthYearColumnFilter.OnFilterExpressionBuilding(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Builds the filter expression and raises the FilterExpressionBuilding event
+            </summary>
+            <param name="sender">The event source.</param>
+            <param name="e">The <see cref="T:System.ComponentModel.CancelEventArgs"/> instance containing the event data.</param>
+            <remarks>
+            Override <b>OnFilterExpressionBuilding</b> to provide a filter expression construction
+            logic and to set the values of the <see cref="P:ERPGridFilter.ERPBaseColumnFilter.FilterExpression"/> and <see cref="P:ERPGridFilter.ERPBaseColumnFilter.FilterCaption"/> properties.
+            The <see cref="T:ERPGridFilter.ERPFilterManager"/> will use these properties in constructing the whole filter expression and to change the header text of the filtered column.
+            Otherwise, you can create an event handler and set the <i>Cancel</i> property of event argument to true, to skip standard filter expression building logic.
+            </remarks>
+        </member>
+        <member name="F:ERPGridFilter.ERPMonthYearColumnFilter.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ERPGridFilter.ERPMonthYearColumnFilter.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ERPGridFilter.ERPMonthYearColumnFilter.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:ERPGridFilter.ERPMonthYearColumnFilter.MonthCsvList">
+            <summary>
+            Gets or sets the month comma separated list. 
+            </summary>
+            <value>The month CSV list.</value>
+            <remarks>
+            Allows you to set once your culture-specific comma separated list of months. 
+            </remarks>
+        </member>
+        <member name="P:ERPGridFilter.ERPMonthYearColumnFilter.YearMin">
+            <summary>
+            Gets or sets the minimum year shown in the years combo.
+            </summary>
+            <value>The year min.</value>
+        </member>
+        <member name="P:ERPGridFilter.ERPMonthYearColumnFilter.YearMax">
+            <summary>
+            Gets or sets the maximum year shown in the years combo.
+            </summary>
+            <value>The year min.</value>
+        </member>
+        <member name="P:ERPGridFilter.ERPMonthYearColumnFilter.ComboBoxMonth">
+            <summary>
+            Gets the ComboBox control containing the months list.
+            </summary>
+        </member>
+        <member name="P:ERPGridFilter.ERPMonthYearColumnFilter.ComboBoxYear">
+            <summary>
+            Gets the ComboBox control containing the years list.
+            </summary>
+        </member>
+        <member name="T:ERPGridFilter.ERPNumRangeColumnFilter">
+            <summary>
+            An extended <i>column filter</i> implementation allowing filters on numeric ranges.
+            </summary>
+        </member>
+        <member name="M:ERPGridFilter.ERPNumRangeColumnFilter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ERPGridFilter.ERPNumRangeColumnFilter"/> class.
+            </summary>
+        </member>
+        <member name="M:ERPGridFilter.ERPNumRangeColumnFilter.OnFilterInitializing(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Perform filter initialitazion and raises the FilterInitializing event.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.ComponentModel.CancelEventArgs"/> instance containing the event data.</param>
+            <remarks>
+            When this <i>column filter</i> control is added to the <i>column filters</i> array of the <i>filter manager</i>,
+            the latter calls the <see cref="M:ERPGridFilter.ERPBaseColumnFilter.Init(ERPGridFilter.ERPFilterManager,ERPGridFilter.ERPBaseFilterHost,System.Windows.Forms.DataGridViewColumn,System.Data.DataView)"/> method which, in turn, calls this method.
+            You can ovverride this method to provide initialization code or you can create an event handler and 
+            set the <i>Cancel</i> property of event argument to true, to skip standard initialization.
+            </remarks>
+        </member>
+        <member name="M:ERPGridFilter.ERPNumRangeColumnFilter.OnFilterExpressionBuilding(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Builds the filter expression and raises the FilterExpressionBuilding event
+            </summary>
+            <param name="sender">The event source.</param>
+            <param name="e">The <see cref="T:System.ComponentModel.CancelEventArgs"/> instance containing the event data.</param>
+            <remarks>
+            Override <b>OnFilterExpressionBuilding</b> to provide a filter expression construction
+            logic and to set the values of the <see cref="P:ERPGridFilter.ERPBaseColumnFilter.FilterExpression"/> and <see cref="P:ERPGridFilter.ERPBaseColumnFilter.FilterCaption"/> properties.
+            The <see cref="T:ERPGridFilter.ERPFilterManager"/> will use these properties in constructing the whole filter expression and to change the header text of the filtered column.
+            Otherwise, you can create an event handler and set the <i>Cancel</i> property of event argument to true, to skip standard filter expression building logic.
+            </remarks>
+        </member>
+        <member name="F:ERPGridFilter.ERPNumRangeColumnFilter.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ERPGridFilter.ERPNumRangeColumnFilter.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ERPGridFilter.ERPNumRangeColumnFilter.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:ERPGridFilter.ERPNumRangeColumnFilter.ComboBoxOperator">
+            <summary>
+            Gets the ComboBox control containing the available operators.
+            </summary>
+        </member>
+        <member name="P:ERPGridFilter.ERPNumRangeColumnFilter.TextBoxValue">
+            <summary>
+            Gets the TextBox control containing the first value.
+            </summary>
+        </member>
+        <member name="P:ERPGridFilter.ERPNumRangeColumnFilter.TextBoxValue2">
+            <summary>
+            Gets the TextBox control containing the second value.
+            </summary>
+        </member>
+        <member name="T:ERPGridFilter.ERPDateColumnFilter">
+            <summary>
+            A standard <i>column filter</i> implementation for date columns.
+            </summary>
+        </member>
+        <member name="M:ERPGridFilter.ERPDateColumnFilter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ERPGridFilter.ERPDateColumnFilter"/> class.
+            </summary>
+        </member>
+        <member name="M:ERPGridFilter.ERPDateColumnFilter.OnFilterInitializing(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Perform filter initialitazion and raises the FilterInitializing event.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.ComponentModel.CancelEventArgs"/> instance containing the event data.</param>
+            <remarks>
+            When this <i>column filter</i> control is added to the <i>column filters</i> array of the <i>filter manager</i>,
+            the latter calls the <see cref="M:ERPGridFilter.ERPBaseColumnFilter.Init(ERPGridFilter.ERPFilterManager,ERPGridFilter.ERPBaseFilterHost,System.Windows.Forms.DataGridViewColumn,System.Data.DataView)"/> method which, in turn, calls this method.
+            You can ovverride this method to provide initialization code or you can create an event handler and 
+            set the <i>Cancel</i> property of event argument to true, to skip standard initialization.
+            </remarks>
+        </member>
+        <member name="M:ERPGridFilter.ERPDateColumnFilter.OnFilterExpressionBuilding(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Builds the filter expression and raises the FilterExpressionBuilding event
+            </summary>
+            <param name="sender">The event source.</param>
+            <param name="e">The <see cref="T:System.ComponentModel.CancelEventArgs"/> instance containing the event data.</param>
+            <remarks>
+            Override <b>OnFilterExpressionBuilding</b> to provide a filter expression construction
+            logic and to set the values of the <see cref="P:ERPGridFilter.ERPBaseColumnFilter.FilterExpression"/> and <see cref="P:ERPGridFilter.ERPBaseColumnFilter.FilterCaption"/> properties.
+            The <see cref="T:ERPGridFilter.ERPFilterManager"/> will use these properties in constructing the whole filter expression and to change the header text of the filtered column.
+            Otherwise, you can create an event handler and set the <i>Cancel</i> property of event argument to true, to skip standard filter expression building logic.
+            </remarks>
+        </member>
+        <member name="F:ERPGridFilter.ERPDateColumnFilter.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ERPGridFilter.ERPDateColumnFilter.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ERPGridFilter.ERPDateColumnFilter.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:ERPGridFilter.ERPDateColumnFilter.ComboBoxOperator">
+            <summary>
+            Gets the ComboBox control containing the available operators.
+            </summary>
+        </member>
+        <member name="P:ERPGridFilter.ERPDateColumnFilter.DateTimePickerValue">
+            <summary>
+            Gets the DateTimePicker control containing the date value.
+            </summary>
+        </member>
+        <member name="T:ERPGridFilter.ERPCheckBoxColumnFilter">
+            <summary>
+            A standard <i>column filter</i> implementation for checkbox columns.
+            </summary>
+        </member>
+        <member name="M:ERPGridFilter.ERPCheckBoxColumnFilter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ERPGridFilter.ERPCheckBoxColumnFilter"/> class.
+            </summary>
+        </member>
+        <member name="M:ERPGridFilter.ERPCheckBoxColumnFilter.OnFilterInitializing(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Perform filter initialitazion and raises the FilterInitializing event.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.ComponentModel.CancelEventArgs"/> instance containing the event data.</param>
+            <remarks>
+            When this <i>column filter</i> control is added to the <i>column filters</i> array of the <i>filter manager</i>,
+            the latter calls the <see cref="M:ERPGridFilter.ERPBaseColumnFilter.Init(ERPGridFilter.ERPFilterManager,ERPGridFilter.ERPBaseFilterHost,System.Windows.Forms.DataGridViewColumn,System.Data.DataView)"/> method which, in turn, calls this method.
+            You can ovverride this method to provide initialization code or you can create an event handler and 
+            set the <i>Cancel</i> property of event argument to true, to skip standard initialization.
+            </remarks>
+        </member>
+        <member name="M:ERPGridFilter.ERPCheckBoxColumnFilter.OnFilterExpressionBuilding(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Builds the filter expression and raises the FilterExpressionBuilding event
+            </summary>
+            <param name="sender">The event source.</param>
+            <param name="e">The <see cref="T:System.ComponentModel.CancelEventArgs"/> instance containing the event data.</param>
+            <remarks>
+            Override <b>OnFilterExpressionBuilding</b> to provide a filter expression construction
+            logic and to set the values of the <see cref="P:ERPGridFilter.ERPBaseColumnFilter.FilterExpression"/> and <see cref="P:ERPGridFilter.ERPBaseColumnFilter.FilterCaption"/> properties.
+            The <see cref="T:ERPGridFilter.ERPFilterManager"/> will use these properties in constructing the whole filter expression and to change the header text of the filtered column.
+            Otherwise, you can create an event handler and set the <i>Cancel</i> property of event argument to true, to skip standard filter expression building logic.
+            </remarks>
+        </member>
+        <member name="F:ERPGridFilter.ERPCheckBoxColumnFilter.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ERPGridFilter.ERPCheckBoxColumnFilter.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ERPGridFilter.ERPCheckBoxColumnFilter.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:ERPGridFilter.ERPCheckBoxColumnFilter.ComboBoxOperator">
+            <summary>
+            Gets the ComboBox control containing the available operators.
+            </summary>
+        </member>
+        <member name="P:ERPGridFilter.ERPCheckBoxColumnFilter.CheckBoxValue">
+            <summary>
+            Gets the CheckBox control containing the checked value.
+            </summary>
+        </member>
+        <member name="T:ERPGridFilter.ERPComboBoxColumnFilter">
+            <summary>
+            A standard <i>column filter</i> implementation for ComboBox columns.
+            </summary>
+            <remarks>
+            If the <b>DataGridView</b> column to which this <i>column filter</i> is applied
+            is not a ComboBox column, it automatically creates a distinct list of values from the bound <b>DataView</b> column.
+            If the DataView changes, you should do an explicit call to <see cref="M:ERPGridFilter.ERPComboBoxColumnFilter.RefreshValues"/> method.
+            </remarks>
+        </member>
+        <member name="M:ERPGridFilter.ERPComboBoxColumnFilter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ERPGridFilter.ERPComboBoxColumnFilter"/> class.
+            </summary>
+        </member>
+        <member name="M:ERPGridFilter.ERPComboBoxColumnFilter.OnFilterInitializing(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Perform filter initialitazion and raises the FilterInitializing event.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.ComponentModel.CancelEventArgs"/> instance containing the event data.</param>
+            <remarks>
+            When this <i>column filter</i> control is added to the <i>column filters</i> array of the <i>filter manager</i>,
+            the latter calls the <see cref="M:ERPGridFilter.ERPBaseColumnFilter.Init(ERPGridFilter.ERPFilterManager,ERPGridFilter.ERPBaseFilterHost,System.Windows.Forms.DataGridViewColumn,System.Data.DataView)"/> method which, in turn, calls this method.
+            You can ovverride this method to provide initialization code or you can create an event handler and 
+            set the <i>Cancel</i> property of event argument to true, to skip standard initialization.
+            </remarks>
+        </member>
+        <member name="M:ERPGridFilter.ERPComboBoxColumnFilter.RefreshValues">
+            <summary>
+            For non-combobox columns, refreshes the list of the <b>DataView</b> values in the column.
+            </summary>
+        </member>
+        <member name="M:ERPGridFilter.ERPComboBoxColumnFilter.OnFilterExpressionBuilding(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Builds the filter expression and raises the FilterExpressionBuilding event
+            </summary>
+            <param name="sender">The event source.</param>
+            <param name="e">The <see cref="T:System.ComponentModel.CancelEventArgs"/> instance containing the event data.</param>
+            <remarks>
+            Override <b>OnFilterExpressionBuilding</b> to provide a filter expression construction
+            logic and to set the values of the <see cref="P:ERPGridFilter.ERPBaseColumnFilter.FilterExpression"/> and <see cref="P:ERPGridFilter.ERPBaseColumnFilter.FilterCaption"/> properties.
+            The <see cref="T:ERPGridFilter.ERPFilterManager"/> will use these properties in constructing the whole filter expression and to change the header text of the filtered column.
+            Otherwise, you can create an event handler and set the <i>Cancel</i> property of event argument to true, to skip standard filter expression building logic.
+            </remarks>
+        </member>
+        <member name="F:ERPGridFilter.ERPComboBoxColumnFilter.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ERPGridFilter.ERPComboBoxColumnFilter.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ERPGridFilter.ERPComboBoxColumnFilter.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:ERPGridFilter.ERPComboBoxColumnFilter.ComboBoxOperator">
+            <summary>
+            Gets the ComboBox control containing the available operators.
+            </summary>
+        </member>
+        <member name="P:ERPGridFilter.ERPComboBoxColumnFilter.ComboBoxValue">
+            <summary>
+            Gets the ComboBox control containing the available values.
+            </summary>
+        </member>
+        <member name="T:ERPGridFilter.ERPBaseFilterHost">
+             <summary>
+             The base class from which to derive effective <i>filter host</i> controls
+             </summary>
+             <remarks>
+             The purpose of the <i>filter host</i> control is to show a popup near a right-clicked column and to 
+             host child <i>column filter</i> controls. 
+             When the popup is shown, only the <i>column filter</i> control related to right-clicked column
+             is visibile. 
+             <b>ERPBaseFilterHost</b> is a derivation of <b>UserControl</b> and provide functionalities to 
+             cooperate with <see cref="T:ERPGridFilter.ERPFilterManager"/>.  
+             <para>
+             NOTE: 
+             This class must be intended as an abstract class. However, declaring it as abstract,
+             would generate errors whitin the designer when designing derived classes.
+             </para>
+             <para>
+             In your derivation, you have to provide a host area (such as a panel) and ovverride the 
+             <see cref="P:ERPGridFilter.ERPBaseFilterHost.FilterClientArea"/> to return it. Also, create visual elements 
+             for <i>remove filter</i>, <i>remove all filters</i>, <i>apply filter</i> and use the 
+             <b>ERPFilterManager</b> methods <see cref="M:ERPGridFilter.ERPFilterManager.ActivateFilter(System.Boolean)"/> and 
+             <see cref="M:ERPGridFilter.ERPFilterManager.ActivateAllFilters(System.Boolean)"/>. 
+             </para>
+             </remarks>
+             <example>
+             <code>
+            public partial class ERPFilterHost : ERPBaseFilterHost {
+            
+                public ERPFilterHost() {
+                    InitializeComponent();
+                    this.CurrentColumnFilterChanged += new EventHandler(ERPFilterHost_CurrentColumnFilterChanged);
+                }
+             
+                void ERPFilterHost_CurrentColumnFilterChanged(object sender, EventArgs e) {
+                    lblColumnName.Text = CurrentColumnFilter.OriginalDataGridViewColumnHeaderText;
+                }
+             
+                public override Control FilterClientArea {
+                    get {
+                        return this.panelFilterArea;
+                    }
+                }
+             
+                private void tsOK_Click(object sender, EventArgs e) {
+                    FilterManager.ActivateFilter(true);
+                    this.Popup.Close();
+                }
+             
+                private void tsRemove_Click(object sender, EventArgs e) {
+                    FilterManager.ActivateFilter(false);
+                    this.Popup.Close();
+                }
+             
+                private void tsRemoveAll_Click(object sender, EventArgs e) {
+                    FilterManager.ActivateAllFilters(false);
+                    this.Popup.Close();
+                }
+             
+            }
+             </code>
+             </example>
+        </member>
+        <member name="M:ERPGridFilter.ERPBaseFilterHost.DoAutoFit">
+            <summary>
+            Performs growing / shrinking of the <i>filter host</i> to best fit the current visibile <i>column filter</i>.
+            </summary>
+            <remarks>
+            Ovverride this method to provide your own resize logic.
+            </remarks>
+        </member>
+        <member name="M:ERPGridFilter.ERPBaseFilterHost.AlignFilter">
+            <summary>
+            Aligns the <i>column filter</i> into the filter client area.
+            </summary>
+            <remarks>
+            Ovverride this method to provide your own alignment logic.
+            </remarks>
+        </member>
+        <member name="M:ERPGridFilter.ERPBaseFilterHost.BitmapToRegion(System.Drawing.Bitmap,System.Drawing.Color)">
+            <summary>
+            Returns a region based on the transparency color of a bitmap.
+            </summary>
+            <param name="bitmap">The bitmap.</param>
+            <param name="transparencyColor">The transparency color.</param>
+            <returns>A region</returns>
+        </member>
+        <member name="M:ERPGridFilter.ERPBaseFilterHost.RegisterComboBox(System.Windows.Forms.ComboBox)">
+            <summary>
+            Registers the a combo box.
+            </summary>
+            <param name="comboBox">The combo box.</param>
+            <remarks>
+            When the user clicks on an <b>ComboBox</b> item that is outside of the
+            host area, this cause an unwanted closing of the <i>filter host</i>. 
+            If you use a <b>ComboBox</b> in a customized <i>column filter</i>, 
+            be sure to call this method in your filter intitialitazion code.
+            </remarks>
+        </member>
+        <member name="E:ERPGridFilter.ERPBaseFilterHost.CurrentColumnFilterChanged">
+            <summary>
+            Occurs when the current visible <i>column filter</i> is changed.
+            </summary>
+        </member>
+        <member name="P:ERPGridFilter.ERPBaseFilterHost.FilterClientArea">
+            <summary>
+            Return the effective area to which <i>column filters</i> will be added.
+            </summary>
+        </member>
+        <member name="P:ERPGridFilter.ERPBaseFilterHost.Popup">
+            <summary>
+            Gets the <b>ToolStripDropDown</b> object used to popup the <i>filter host</i>
+            </summary>
+        </member>
+        <member name="P:ERPGridFilter.ERPBaseFilterHost.FilterManager">
+            <summary>
+            Gets or sets the <i>filter manger</i> 
+            </summary>
+        </member>
+        <member name="P:ERPGridFilter.ERPBaseFilterHost.CurrentColumnFilter">
+            <summary>
+            Gets or sets the currently visibile <i>column filter</i> control
+            </summary> 
+        </member>
+        <member name="P:ERPGridFilter.ERPBaseFilterHost.SizeDifference">
+            <summary>
+            Gets the original size difference of the <i>filter host</i> and the <see cref="P:ERPGridFilter.ERPBaseFilterHost.FilterClientArea"/>.
+            </summary>
+        </member>
+        <member name="T:ERPGridFilter.ERPFilterManager">
+            <summary>
+            The main class involved in adding filtering capabilities to a DataGridView.  
+            </summary>
+            <remarks>
+            This is the class that you use to add filtering capabilities to a <b>DataGridView</b>. The
+            <b>DataGridView</b> must be data bound to a <b>DataTable</b>, a <b>DataView</b> or a <b>BindingSource</b> which in turn is
+            bound to one of these two.
+            When you assign a <b>DataGridView</b> to a <b>ERPFilterManager</b>, it attaches some handlers to respond 
+            to right click on column headers and to perform some custom painting on the grid. 
+            When the user right clicks a column header, the <b>ERPFilterManager</b> shows a popup near the column.
+            This popup is a control that serves as host for other controls, one for each column. Only one of
+            these child controls is visibile, based on clicked column. 
+            We have one <i>filter host</i> control and many <i>column filter</i> child controls. 
+            <para>
+            The <i>filter host</i> control must be a derivation of the <see cref="T:ERPGridFilter.ERPBaseFilterHost"/> class, while filter controls must be
+            derived by the <see cref="T:ERPGridFilter.ERPBaseColumnFilter"/> class. These two classes don't provide any user interface. 
+            As a default, <b>ERPFilterManager</b> uses the standard derivation <b>ERPFilterHost</b> and, depending on column type and data type,
+            one of the standard derivations: <see cref="T:ERPGridFilter.ERPTextBoxColumnFilter"/>
+            , <see cref="T:ERPGridFilter.ERPCheckBoxColumnFilter"/>, <see cref="T:ERPGridFilter.ERPComboBoxColumnFilter"/> 
+            and <see cref="T:ERPGridFilter.ERPDateColumnFilter"/>. 
+            </para>
+            <para>
+            When a <b>DataGridView</b> is attached, the manager perform the following actions: 
+            <ul>
+            <li>it creates a <i>filter host</i>, that is an instance of the <b>ERPFilterHost</b> class. If you previously provided a
+            <i>filter host</i>, this step is skipped.</li> 
+            <li>it creates an array of <b>ERPBaseColumnFilter</b>, one per column, and initializes each element to a specialization 
+            of <b>ERPBaseColumnFilter</b>. If <see cref="P:ERPGridFilter.ERPFilterManager.AutoCreateFilters"/> is false, this step is skipped.
+            </li>
+            </ul>
+            </para>
+            <para>
+            You can force a specific <i>column filter</i> for a certain column, intervening in this process through the events 
+            <see cref="E:ERPGridFilter.ERPFilterManager.ColumnFilterAdding"/> and <see cref="E:ERPGridFilter.ERPFilterManager.ColumnFilterAdded"/>. You can also intervene, after the entire process, replacing 
+            a <i>column filter</i> instance in the array with another instance you created. 
+            </para>
+            </remarks>
+        </member>
+        <member name="M:ERPGridFilter.ERPFilterManager.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ERPGridFilter.ERPFilterManager"/> class.
+            </summary>
+        </member>
+        <member name="M:ERPGridFilter.ERPFilterManager.#ctor(System.Windows.Forms.DataGridView,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ERPGridFilter.ERPFilterManager"/> class.
+            </summary>
+            <param name="dataGridView">The <b>DataGridView</b> to which attach filtering capabilities</param>
+            <param name="autoCreateFilters">if set to <c>true</c> automatically creates a <i>column filter</i> for each column</param>
+        </member>
+        <member name="M:ERPGridFilter.ERPFilterManager.#ctor(System.Windows.Forms.DataGridView)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ERPGridFilter.ERPFilterManager"/> class.
+            </summary>
+            <param name="dataGridView">The <b>DataGridView</b> to which attach filtering capabilities.</param>
+        </member>
+        <member name="M:ERPGridFilter.ERPFilterManager.mDataGridView_CellMouseClick(System.Object,System.Windows.Forms.DataGridViewCellMouseEventArgs)">
+            <summary>
+            Shows the popup when user right-clicks a column header
+            </summary>
+            <param name="sender">The event source.</param>
+            <param name="e">The <see cref="T:System.Windows.Forms.DataGridViewCellMouseEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:ERPGridFilter.ERPFilterManager.OnFilteredGridPaint(System.Object,System.Windows.Forms.DataGridViewCellPaintingEventArgs)">
+            <summary>
+            Paints a funnel icon in the cell origin when some column is filtered.
+            </summary>
+            <param name="sender">The sender</param>
+            <param name="e">The <see cref="T:System.Windows.Forms.DataGridViewCellPaintingEventArgs"/> instance containing the event data.</param>
+            <remarks>
+            Override this method to provide your own painting
+            </remarks>
+        </member>
+        <member name="M:ERPGridFilter.ERPFilterManager.OnHighlightedColumnPaint(System.Object,System.Windows.Forms.DataGridViewCellPaintingEventArgs)">
+            <summary>
+            Performs customized column header painting when the popup is visibile. 
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.Windows.Forms.DataGridViewCellPaintingEventArgs"/> instance containing the event data.</param>
+            <remarks>
+            Override this method to provide your own painting
+            </remarks>
+        </member>
+        <member name="M:ERPGridFilter.ERPFilterManager.OnFilteredColumnPaint(System.Object,System.Windows.Forms.DataGridViewCellPaintingEventArgs)">
+            <summary>
+            Performs customized column header painting when the column is filtered.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.Windows.Forms.DataGridViewCellPaintingEventArgs"/> instance containing the event data.</param>
+            <remarks>
+            Override this method to provide your own painting
+            </remarks>
+        </member>
+        <member name="M:ERPGridFilter.ERPFilterManager.ShowPopup(System.Int32)">
+            <summary>
+            Shows the popup.
+            </summary>
+            <param name="ColumnIndex">Index of the column.</param>
+        </member>
+        <member name="M:ERPGridFilter.ERPFilterManager.ActivateFilter(System.Boolean,System.Int32)">
+            <summary>
+            Activates / Deactivates the filter for the column specified by ColumnIndex.
+            </summary>
+            <param name="Active">The active state to set</param>
+            <param name="ColumnIndex">Index of the column.</param>
+        </member>
+        <member name="M:ERPGridFilter.ERPFilterManager.ActivateFilter(System.Boolean,System.String)">
+            <summary>
+            Activates / Deactivates the filter for the column specified by ColumnName.
+            </summary>
+            <param name="Active">The active state to set</param>
+            <param name="ColumnName">Name of the column.</param>
+        </member>
+        <member name="M:ERPGridFilter.ERPFilterManager.ActivateFilter(System.Boolean)">
+            <summary>
+            Activates / Deactivates the filter for the current, that is last right-clicked, column.
+            </summary>
+            <param name="Active">The active state to set</param>
+        </member>
+        <member name="M:ERPGridFilter.ERPFilterManager.ActivateAllFilters(System.Boolean)">
+            <summary>
+            Activates / Deactivates all filters.
+            </summary>
+            <param name="Active">The active state to set</param>
+        </member>
+        <member name="M:ERPGridFilter.ERPFilterManager.RebuildFilter">
+            <summary>
+            Rebuilds the whole filter expression.
+            </summary>
+            <remarks>
+            The whole filter expression is the conjunction of each <i>column filter</i> and the <see cref="P:ERPGridFilter.ERPFilterManager.BaseFilter"/>. 
+            Call this method to refresh and apply the whole filter expression.
+            </remarks>
+        </member>
+        <member name="E:ERPGridFilter.ERPFilterManager.ColumnFilterAdding">
+            <summary>
+            Occurs when a <i>column filter</i> instance for a column is about to be automatically created.
+            </summary>
+            <remarks>
+            Using this event you can set the <see cref="P:ERPGridFilter.ColumnFilterEventArgs.ColumnFilter"/> 
+            property to force the <see cref="T:ERPGridFilter.ERPBaseColumnFilter"/> specialization to use for the 
+            column. 
+            This event is raised only if <see cref="P:ERPGridFilter.ERPFilterManager.AutoCreateFilters"/> is true.
+            </remarks>
+        </member>
+        <member name="E:ERPGridFilter.ERPFilterManager.ColumnFilterAdded">
+            <summary>
+            Occurs when a <i>column filter</i> instance is created.
+            This event is raised only if <see cref="P:ERPGridFilter.ERPFilterManager.AutoCreateFilters"/> is true.
+            </summary>
+        </member>
+        <member name="E:ERPGridFilter.ERPFilterManager.PopupShowing">
+            <summary>
+            Occurs when the popup is about to be shown
+            </summary>
+            <remarks>
+            Use this event to customize the popup position. Set the Handled property of the event argument to <c>true</c>.
+            </remarks>
+        </member>
+        <member name="P:ERPGridFilter.ERPFilterManager.AutoCreateFilters">
+            <summary>
+            Gets or sets a value indicating whether the manager must create <i>column filters</i>.
+            </summary>
+            <value><c>true</c> by default.</value>
+        </member>
+        <member name="P:ERPGridFilter.ERPFilterManager.FilterHost">
+            <summary>
+            Gets and sets the <i>filter host</i> to use. 
+            </summary>
+            <remarks>
+            The default <i>filter host</i> is an instance of <see cref="T:ERPGridFilter.ERPFilterHost"/>
+            </remarks>
+        </member>
+        <member name="P:ERPGridFilter.ERPFilterManager.DataGridView">
+            <summary>
+            Gets and sets the DataGridView to which apply filtering capabilities.
+            </summary>
+            <remarks>
+            <para>
+            When a <b>DataGridView</b> is attached, the manager perform the following actions: 
+            <ul>
+            <li>it creates a <i>filter host</i>, that is an instance of the <b>ERPFilterHost</b> class. If you previously provided a
+            <i>filter host</i>, this step is skipped.</li> 
+            <li>it creates an array of <b>ERPBaseColumnFilter</b>, one per column, and initializes each element to a specialization 
+            of <b>ERPBaseColumnFilter</b>. If <see cref="P:ERPGridFilter.ERPFilterManager.AutoCreateFilters"/> is false, this step is skipped.
+            </li>
+            </ul>
+            </para>
+            <para>
+            You can force a specific <i>column filter</i> for a certain column, intervening in this process through the events 
+            <see cref="E:ERPGridFilter.ERPFilterManager.ColumnFilterAdding"/> and <see cref="E:ERPGridFilter.ERPFilterManager.ColumnFilterAdded"/>. You can also intervene, after the entire process, replacing 
+            a <i>column filter</i> instance in the array with another instance you created. 
+            </para>
+            </remarks>
+        </member>
+        <member name="P:ERPGridFilter.ERPFilterManager.BaseFilter">
+            <summary>
+            Gets and sets developer provided filter expression. This expression
+            will be "merged" with end-user created filters.
+            </summary>
+            <value>The base filter.</value>
+        </member>
+        <member name="P:ERPGridFilter.ERPFilterManager.Item(System.Int32)">
+            <summary>
+            Gets or sets the <i>column filter</i> control related to the ColumnIndex
+            </summary>
+            <param name="ColumnIndex">The index of the <b>DataGridView</b> column</param>
+            <returns>the <b>ERPBaseColumnFilter</b> related to the <b>DataGridView</b> column</returns>
+            <remarks>
+            This indexer allow you to get and set the <i>column filter</i> instance for the column. 
+            You can set one of the standard <i>column filter</i> implementation or an instance 
+            of your own <b>ERPBaseFilterColumn</b> specialization.
+            </remarks>
+        </member>
+        <member name="P:ERPGridFilter.ERPFilterManager.Item(System.String)">
+            <summary>
+            Gets or sets the <i>column filter</i> control related to the ColumnName
+            </summary>
+            <param name="ColumnName">The name of the <b>DataGridView</b> column</param>
+            <returns>the ERPBaseColumnFilter related to the <b>DataGridView</b> column</returns>
+            <remarks>
+            This indexer allow you to get and set the <i>column filter</i> instance for the column. 
+            You can set one of the standard <i>column filter</i> implementation or an instance 
+            of your own <b>ERPBaseFilterColumn</b> specialization.
+            </remarks>
+        </member>
+        <member name="P:ERPGridFilter.ERPFilterManager.FunnelPicture">
+            <summary>
+            Gets a funnel picture.
+            </summary>
+        </member>
+        <member name="T:ERPGridFilter.HFilterAlignment">
+            <summary>
+            Specifies how the <i>column filter</i> control is horizontally aligned inside the <i>filter host</i>.
+            </summary>
+        </member>
+        <member name="T:ERPGridFilter.VFilterAlignment">
+            <summary>
+            Specifies how the <i>column filter</i> control is vertically aligned inside the <i>filter host</i>.
+            </summary>
+        </member>
+        <member name="T:ERPGridFilter.ERPFilterHost">
+            <summary>
+            Is the standard implementation of ERPBaseFilterHost
+            </summary>
+        </member>
+        <member name="M:ERPGridFilter.ERPFilterHost.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ERPGridFilter.ERPFilterHost"/> class.
+            </summary>
+        </member>
+        <member name="F:ERPGridFilter.ERPFilterHost.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ERPGridFilter.ERPFilterHost.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ERPGridFilter.ERPFilterHost.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:ERPGridFilter.ERPFilterHost.FilterClientArea">
+            <summary>
+            Return the effective area to which the <i>column filters</i> will be added.
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:ERPGridFilter.ERPTextBoxColumnFilter">
+            <summary>
+            A standard <i>column filter</i> implementation for textbox columns.
+            </summary>
+        </member>
+        <member name="M:ERPGridFilter.ERPTextBoxColumnFilter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ERPGridFilter.ERPTextBoxColumnFilter"/> class.
+            </summary>
+        </member>
+        <member name="M:ERPGridFilter.ERPTextBoxColumnFilter.OnFilterInitializing(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Perform filter initialitazion and raises the FilterInitializing event.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.ComponentModel.CancelEventArgs"/> instance containing the event data.</param>
+            <remarks>
+            When this <i>column filter</i> control is added to the <i>column filters</i> array of the <i>filter manager</i>,
+            the latter calls the <see cref="M:ERPGridFilter.ERPBaseColumnFilter.Init(ERPGridFilter.ERPFilterManager,ERPGridFilter.ERPBaseFilterHost,System.Windows.Forms.DataGridViewColumn,System.Data.DataView)"/> method which, in turn, calls this method.
+            You can ovverride this method to provide initialization code or you can create an event handler and 
+            set the <i>Cancel</i> property of event argument to true, to skip standard initialization.
+            </remarks>
+        </member>
+        <member name="M:ERPGridFilter.ERPTextBoxColumnFilter.OnFilterExpressionBuilding(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Builds the filter expression and raises the FilterExpressionBuilding event
+            </summary>
+            <param name="sender">The event source.</param>
+            <param name="e">The <see cref="T:System.ComponentModel.CancelEventArgs"/> instance containing the event data.</param>
+            <remarks>
+            Override <b>OnFilterExpressionBuilding</b> to provide a filter expression construction
+            logic and to set the values of the <see cref="P:ERPGridFilter.ERPBaseColumnFilter.FilterExpression"/> and <see cref="P:ERPGridFilter.ERPBaseColumnFilter.FilterCaption"/> properties.
+            The <see cref="T:ERPGridFilter.ERPFilterManager"/> will use these properties in constructing the whole filter expression and to change the header text of the filtered column.
+            Otherwise, you can create an event handler and set the <i>Cancel</i> property of event argument to true, to skip standard filter expression building logic.
+            </remarks>
+        </member>
+        <member name="F:ERPGridFilter.ERPTextBoxColumnFilter.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ERPGridFilter.ERPTextBoxColumnFilter.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ERPGridFilter.ERPTextBoxColumnFilter.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:ERPGridFilter.ERPTextBoxColumnFilter.ComboBoxOperator">
+            <summary>
+            Gets the ComboBox control containing the available operators.
+            </summary>
+        </member>
+        <member name="P:ERPGridFilter.ERPTextBoxColumnFilter.TextBoxValue">
+            <summary>
+            Gets the TextBox control containing the value.
+            </summary>
+        </member>
+        <member name="T:ERPGridFilter.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:ERPGridFilter.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:ERPGridFilter.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:ERPGridFilter.Properties.Resources._1341420294_filter">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ERPGridFilter.Properties.Resources._1341420628_filter_delete">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ERPGridFilter.Properties.Resources._1341420628_filter_delete1">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ERPGridFilter.Properties.Resources.accept">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ERPGridFilter.Properties.Resources.accept_page1">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+    </members>
+</doc>

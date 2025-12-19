@@ -1,0 +1,16 @@
+# Firebase / secrets
+serviceAccount.json
+*.json
+
+# Flutter
+build/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Android
+android/.gradle/
+android/local.properties
+
+# Desktop
+*.exe

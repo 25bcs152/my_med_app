@@ -1,0 +1,10 @@
+catman=off
+title=MARG ERP LIMITED
+icon="MARG.ICO"
+files=250
+mvcount=75000
+stacksize=1024
+screen=off
+escape=off
+resource=marguser.csv
+codepage=437

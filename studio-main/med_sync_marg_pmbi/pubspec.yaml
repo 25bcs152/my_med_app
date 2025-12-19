@@ -1,0 +1,26 @@
+name: med_sync_marg_pmbi
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.10.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+  file_picker: ^10.3.7
+  excel: ^4.0.6
+  googleapis: ^15.0.0
+  googleapis_auth: ^2.0.0
+  provider: ^6.1.5+1
+  intl: ^0.20.2
+  http: ^1.6.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
